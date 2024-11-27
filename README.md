@@ -38,7 +38,6 @@ Install Dependencies:
 Install the required Node.js packages:
 
  ```bash
-Copy code
 npm install
  ```
 Set Up Environment Variables:
@@ -46,7 +45,6 @@ Set Up Environment Variables:
 Create a .env file in the root of the project and add the following variables:
 
 ```bash
-Copy code
 PORT=3000
 REDIS_HOST=localhost
 REDIS_PORT=6379
@@ -56,7 +54,6 @@ Run Redis (with RedisJSON):
 If you're using Docker to run RedisJSON, you can start Redis with:
 
 ```bash
-Copy code
 docker run -d --name redis -p 6379:6379 redislabs/rejson:latest
 ```
 If you're using WSL or a native Redis installation, ensure Redis and RedisJSON are running on localhost:6379.
@@ -66,7 +63,6 @@ Start the Application:
 To start the application, run the following command:
 
 ```bash
-Copy code
 npm start
 ```
 The backend service should now be running on http://localhost:3000.
@@ -80,7 +76,6 @@ Description: Fetch a list of all books available in the store.
 Response:
 
 ```json
-Copy code
 [
   {
     "id": 1,
@@ -102,7 +97,6 @@ id: Book ID (integer)
 Response:
 
 ```json
-Copy code
 {
   "id": 1,
   "title": "Book Title",
@@ -119,7 +113,6 @@ Description: Add a new book to the store.
 Request Body:
 
 ```json
-Copy code
 {
   "title": "New Book Title",
   "author": "New Author",
@@ -130,7 +123,6 @@ Copy code
 Response:
 
 ```json
-Copy code
 {
   "message": "Book registered successfully!"
 }
@@ -146,7 +138,6 @@ id: Book ID (integer)
 Request Body:
 
 ```json
-Copy code
 {
   "title": "Updated Book Title",
   "author": "Updated Author",
@@ -157,7 +148,6 @@ Copy code
 Response:
 
 ```json
-Copy code
 {
   "message": "Book details updated successfully!"
 }
@@ -173,7 +163,6 @@ id: Book ID (integer)
 Response:
 
 ```json
-Copy code
 {
   "message": "Book purchased successfully!",
   "remainingStock": 49
