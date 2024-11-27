@@ -170,17 +170,17 @@ Response:
 ```
 Testing the API
 You can test the API using Postman or any other API testing tool:
-
+```
 GET /api/books to retrieve all books.
 GET /api/books/:id to retrieve a specific book by ID.
 POST /api/books to add a new book.
 PUT /api/books/:id to update book details.
 POST /api/books/buy/:id to simulate buying a book.
+```
 Error Handling
 If an error occurs during an API request, you will receive a JSON response with an error field:
 
 ```json
-Copy code
 {
   "error": "Error message"
 }
