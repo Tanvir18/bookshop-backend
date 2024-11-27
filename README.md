@@ -37,35 +37,38 @@ Install Dependencies:
 
 Install the required Node.js packages:
 
-bash
+ ```bash
 Copy code
 npm install
+ ```
 Set Up Environment Variables:
 
 Create a .env file in the root of the project and add the following variables:
 
-ini
+```bash
 Copy code
 PORT=3000
 REDIS_HOST=localhost
 REDIS_PORT=6379
 JWT_SECRET_KEY=your_jwt_secret_key
+```
 Run Redis (with RedisJSON):
-
 If you're using Docker to run RedisJSON, you can start Redis with:
 
-bash
+```bash
 Copy code
 docker run -d --name redis -p 6379:6379 redislabs/rejson:latest
+```
 If you're using WSL or a native Redis installation, ensure Redis and RedisJSON are running on localhost:6379.
 
 Start the Application:
 
 To start the application, run the following command:
 
-bash
+```bash
 Copy code
 npm start
+```
 The backend service should now be running on http://localhost:3000.
 
 API Endpoints
@@ -76,7 +79,7 @@ Description: Fetch a list of all books available in the store.
 
 Response:
 
-json
+```json
 Copy code
 [
   {
@@ -87,6 +90,7 @@ Copy code
     "stock": 100
   }
 ]
+```
 2. Get Book by ID
 Endpoint: GET /api/books/:id
 
@@ -97,7 +101,7 @@ Parameters:
 id: Book ID (integer)
 Response:
 
-json
+```json
 Copy code
 {
   "id": 1,
@@ -106,6 +110,7 @@ Copy code
   "price": 19.99,
   "stock": 100
 }
+```
 3. Register a New Book
 Endpoint: POST /api/books
 
@@ -113,7 +118,7 @@ Description: Add a new book to the store.
 
 Request Body:
 
-json
+```json
 Copy code
 {
   "title": "New Book Title",
@@ -121,13 +126,15 @@ Copy code
   "price": 25.99,
   "stock": 50
 }
+```
 Response:
 
-json
+```json
 Copy code
 {
   "message": "Book registered successfully!"
 }
+```
 4. Update Book Details
 Endpoint: PUT /api/books/:id
 
@@ -138,7 +145,7 @@ Parameters:
 id: Book ID (integer)
 Request Body:
 
-json
+```json
 Copy code
 {
   "title": "Updated Book Title",
@@ -146,13 +153,15 @@ Copy code
   "price": 29.99,
   "stock": 45
 }
+```
 Response:
 
-json
+```json
 Copy code
 {
   "message": "Book details updated successfully!"
 }
+```
 5. Buy a Book
 Endpoint: POST /api/books/buy/:id
 
@@ -163,12 +172,13 @@ Parameters:
 id: Book ID (integer)
 Response:
 
-json
+```json
 Copy code
 {
   "message": "Book purchased successfully!",
   "remainingStock": 49
 }
+```
 Testing the API
 You can test the API using Postman or any other API testing tool:
 
@@ -180,8 +190,9 @@ POST /api/books/buy/:id to simulate buying a book.
 Error Handling
 If an error occurs during an API request, you will receive a JSON response with an error field:
 
-json
+```json
 Copy code
 {
   "error": "Error message"
 }
+```
