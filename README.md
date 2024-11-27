@@ -5,6 +5,7 @@ This is a backend service for a web shop that sells books. It allows users to vi
 ## Features
 
 - **Book Registration**: Add new books with details like title, author, price, and stock.
+- **Book Read**: Users can search book.
 - **Stock Management**: Track the stock availability of books.
 - **Buy Books**: Users can purchase books, which reduces stock when successful.
 - **Redis for Data Storage**: Utilizes Redis in-memory database with RedisJSON for handling JSON data storage efficiently.
